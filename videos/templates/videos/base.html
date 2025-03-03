@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coaching și Educație</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/script.js' %}"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{% static 'images/logo.jpg' %}" alt="Logo Educație cu Stil">
+            <span>Farkas Rusu Anca</span>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="{% url 'home' %}">Acasă</a></li>
+                <li><a href="#about">Despre Mine</a></li>
+                <li><a href="#services">Servicii</a></li>
+                <li><a href="#testimonials">Testimoniale</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="{% url 'life_coach' %}">Life Coach</a></li>
+            </ul>
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Farkas Rusu Anca. Toate drepturile rezervate.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector(".nav-links").classList.toggle("active");
+        }
+    </script>
+</body>
+</html>

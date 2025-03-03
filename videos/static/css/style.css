@@ -1,0 +1,585 @@
+/* Import Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Montserrat:wght@600&display=swap');
+
+/* Paleta de culori */
+:root {
+  --background-color: #F8F1E7;  /* Fundal principal */
+  --accent-color: #E2B964;      /* Elemente de accent */
+  --primary-text: #2C3E50;      /* Text principal */
+  --button-color: #E67E22;      /* Butoane și link-uri */
+  --white: #FFFFFF;             /* Fundaluri secundare */
+  --shadow-color: rgba(0, 0, 0, 0.2); /* Umbre subtile */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    color: var(--primary-text);
+}
+
+/* ================= HEADER ================= */
+header {
+  background: var(--primary-text);
+  color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px var(--shadow-color);
+}
+
+/* Logo-ul */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--white);
+}
+
+.logo span {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--white);
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  font-size: 16px;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: var(--white);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Efect Hover și Active pe butoane */
+.nav-links a:hover {
+  background-color: var(--accent-color);
+  border-radius: 5px;
+}
+
+.nav-links a:active {
+  background-color: var(--button-color);
+}
+
+/* Meniu hamburger pentru mobil */
+.menu-icon {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--white);
+}
+
+/* Responsive pentru mobil */
+@media (max-width: 900px) {
+  nav {
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background: var(--primary-text);
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+      display: none;
+  }
+
+  .nav-links {
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  .nav-links.active {
+      display: flex;
+  }
+
+  .menu-icon {
+      display: block;
+  }
+}
+
+/* ================= HERO SECTION ================= */
+.hero {
+  padding: 120px 20px;
+  background: url('fundal.jpg') no-repeat center center/cover;
+  color: var(--white);
+  text-align: center;
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: auto;
+  gap: 30px;
+}
+
+/* Imagine ovală */
+.hero-image img {
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 50% / 30%;
+  border: 5px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0px 0px 30px var(--white);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Efect suplimentar pe hover */
+.hero-image img:hover {
+  box-shadow: 0px 0px 40px rgba(255, 255, 255, 1);
+}
+
+.hero-content {
+  padding: 15px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Butonul de acțiune */
+.cta-button {
+  display: inline-block;
+  padding: 12px 20px;
+  background: var(--button-color);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.cta-button:hover {
+  background-color: var(--accent-color);
+}
+
+/* ================= ABOUT SECTION ================= */
+.about {
+    text-align: center;
+    padding: 50px;
+}
+
+/* Stilizare secțiune About */
+.about .container {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px var(--shadow-color);
+  max-width: 900px;
+  margin: 30px auto;
+  text-align: center;
+  line-height: 1.8;
+}
+
+
+/* Stil pentru lista cu puncte */
+.about-list, .follow-list {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Stil pentru titluri */
+.about h2, .about h3 {
+  color: var(--primary-text);
+  margin-bottom: 15px;
+}
+
+.about-list li, .follow-list li {
+  font-size: 18px;
+  padding: 10px;
+  background: var(--background-color);
+  border-left: 5px solid var(--button-color);
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px var(--shadow-color);
+}
+
+
+/* Secțiunea Personală - Imagine + Text */
+.about-personal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 30px;
+  background: var(--white);
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px var(--shadow-color);
+}
+
+.about-image {
+  flex: 1;
+  text-align: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 15px;
+  box-shadow: 2px 2px 15px var(--shadow-color);
+}
+
+.about-text {
+  flex: 1;
+  text-align: left;
+}
+
+.about-text h2 {
+  color: var(--primary-text);
+  margin-bottom: 15px;
+}
+
+/* Evidențiere text important */
+.highlight {
+  color: var(--button-color);
+  font-weight: bold;
+}
+
+/* Text cu CTA (Call-To-Action) */
+.cta-text {
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--button-color);
+  margin-top: 20px;
+}
+
+
+/* Stil pentru paragrafe */
+.about p {
+  font-size: 18px;
+  color: var(--primary-text);
+  margin-bottom: 15px;
+}
+
+/* Evidențiere text important */
+.highlight {
+  color: var(--button-color);
+  font-weight: bold;
+}
+
+/* Lista stilizată pentru puncte */
+.about-list {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.about-list li {
+  font-size: 18px;
+  padding: 10px;
+  background: var(--background-color);
+  border-left: 5px solid var(--button-color);
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px var(--shadow-color);
+}
+
+/* Stil pentru textul final motivațional */
+.final-text {
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+/* Text cu CTA (Call-To-Action) */
+.cta-text {
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--button-color);
+  margin-top: 20px;
+}
+
+
+
+
+
+
+
+/* ================= SERVICES SECTION ================= */
+.services {
+    text-align: center;
+    padding: 50px;
+}
+
+.service-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: var(--accent-color);
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    box-shadow: 3px 3px 10px var(--shadow-color);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Efect hover pe cardurile de servicii */
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 5px 5px 15px var(--shadow-color);
+}
+
+/* ================= TESTIMONIALS SECTION ================= */
+/* Secțiunea Testimonials */
+.testimonials {
+  background: var(--background-color);
+  padding: 50px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.testimonials h2 {
+  color: var(--primary-text);
+  margin-bottom: 20px;
+}
+
+/* Container pentru carusel */
+.carousel-container {
+  overflow: hidden;
+  max-width: 700px;
+  margin: auto;
+  position: relative;
+}
+
+/* Carusel derulabil */
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Testimonial */
+.testimonial {
+  min-width: 100%;
+  box-sizing: border-box;
+  background: var(--white);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px var(--shadow-color);
+  text-align: center;
+}
+
+/* Stilizare text testimonial */
+.testimonial p {
+  font-size: 18px;
+  font-style: italic;
+  color: var(--primary-text);
+}
+
+.testimonial span {
+  font-size: 16px;
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+  color: var(--button-color);
+}
+
+/* Butoane pentru navigare manuală */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--button-color);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.prev:hover, .next:hover {
+  background: var(--primary-text);
+}
+
+/* Poziționare butoane */
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+
+/* ================= FOOTER ================= */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--primary-text);
+    color: var(--white);
+}
+
+/* ================= RESPONSIVE DESIGN ================= */
+@media (max-width: 900px) {
+  .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background: var(--primary-text);
+      width: 100%;
+      padding: 10px;
+      text-align: center;
+  }
+
+  .nav-links.active {
+      display: flex;
+  }
+
+  .menu-icon {
+      display: block;
+      font-size: 1.8rem;
+      cursor: pointer;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  header {
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+  }
+
+  .logo img {
+      width: 50px;
+      height: 50px;
+  }
+
+  .hero-container {
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+  }
+
+  .hero-image img {
+      width: 80%;
+      height: auto;
+      margin-bottom: 15px;
+  }
+
+  .hero-content h1 {
+      font-size: 1.8rem;
+  }
+
+  .service-cards {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .card {
+      width: 90%;
+      text-align: center;
+      padding: 15px;
+  }
+}
+
+/* Secțiunea Contact */
+.contact .container {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px var(--shadow-color);
+  max-width: 600px;
+  margin: 30px auto;
+  text-align: center;
+  line-height: 1.8;
+}
+
+.contact h2 {
+  color: var(--primary-text);
+  margin-bottom: 15px;
+}
+
+/* Link-uri pentru email și telefon */
+.contact a {
+  color: var(--button-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+/* Butoane Social Media */
+.social-links {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+/* Imagini pentru Facebook & Instagram */
+.social-button img {
+  width: 60px; /* Dimensiune buton */
+  height: 60px;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Efect de hover */
+.social-button img:hover {
+  transform: scale(1.1);
+}
+
+/* Listă Follow pentru Puncte Vizuale */
+.follow-list {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.follow-list li {
+  font-size: 18px;
+  padding: 10px;
+  background: var(--background-color);
+  border-left: 5px solid var(--button-color);
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px var(--shadow-color);
+}

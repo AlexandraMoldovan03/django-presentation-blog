@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coaching și Educație</title>
+    {% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/coach.css' %}">
+<script src="{% static 'js/script.js' %}"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="static/photos/logo.jpg" alt="Logo Educație cu Stil">
+            <span>Farkas Rusu Anca</span>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Acasă</a></li>
+                <li><a href="#about">Despre Mine</a></li>
+                <li><a href="#services">Servicii</a></li>
+                <li><a href="#testimonials">Testimoniale</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="life-coach.html">Life Coach</a></li>
+            </ul>
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-container">
+        <div class="hero-image">
+          <img src="static/photos/portret.jpg" alt="Imagine Hero">
+        </div>
+        <div class="hero-content">
+            <h1>Coaching, Educație și Formare pentru O Nouă Generație</h1>
+            <p>Creștem împreună prin educație și dezvoltare personală.</p>
+            <a href="https://www.facebook.com/rusu.anka?locale=ro_RO" class="cta-button">Află mai multe</a>
+        </div>
+    </section>
+
+    <section id="life-coach" class="life-coach">
+        <div class="container">
+            <h2>Life Coaching - Videoclipuri</h2>
+            <div class="video-gallery">
+                {% for video in videos %}
+                    <div class="video-post">
+                        <h3>{{ video.title }}</h3>
+                        <video width="640" height="360" controls>
+                            <source src="{{ video.video_file.url }}" type="video/mp4">
+                            Browser-ul tău nu suportă tag-ul video.
+                        </video>
+                    </div>
+                {% empty %}
+                    <p>Nu există videoclipuri încă.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Farkas Rusu Anca. Toate drepturile rezervate.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector(".nav-links").classList.toggle("active");
+        }
+    </script>
+</body>
+</html>
